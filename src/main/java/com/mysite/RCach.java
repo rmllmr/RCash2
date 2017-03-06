@@ -7,11 +7,11 @@ import java.util.Map;
 /**
  * Created by LuMoR on 06.03.2017.
  */
-class RCach {
-    private Map<String, Integer> cacheValue = new HashMap<String, Integer>();
+class RCach<T> {
+    private Map<String, T> cacheValue = new HashMap<String, T>();
     private Map<String, Long> cacheTimeLive = new HashMap<String, Long>();
 
-    public Integer getRCache(String keyRCache){
+    public T getRCache(String keyRCache){
         checkRCache();
         long timeLive;
         long timeNow = new Date().getTime();
@@ -22,7 +22,7 @@ class RCach {
     };
 
 
-    public void putRCache(String keyRCache, Integer valueRCashe, int timeLive){
+    public void putRCache(String keyRCache, T valueRCashe, int timeLive){
         checkRCache();
         if (timeLive > 0) {
             long timeLiveToCache = timeLive * 1000 + System.currentTimeMillis();
