@@ -11,7 +11,7 @@ class RCache<E> {
     private Map<String, E> cacheValue = new HashMap<String, E>();
     private Map<String, Long> cacheTimeLive = new HashMap<String, Long>();
 
-    public E getRCache(String keyRCache){
+    public E get(String keyRCache){
         checkRCache();
         if (cacheTimeLive.containsKey(keyRCache)){
             return cacheValue.get(keyRCache);
@@ -20,7 +20,7 @@ class RCache<E> {
     };
 
 
-    public void putRCache(String keyRCache, E valueRCashe, int timeLive){
+    public void put(String keyRCache, E valueRCashe, int timeLive){
         checkRCache();
         if (timeLive > 0) {
             long timeLiveToCache = timeLive * 1000 + System.currentTimeMillis();
@@ -38,9 +38,6 @@ class RCache<E> {
                 cacheValue.remove(rElementCache);
             }
         }
-
-    }
-    public RCache(){
 
     }
 }
