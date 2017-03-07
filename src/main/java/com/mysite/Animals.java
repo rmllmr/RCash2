@@ -3,7 +3,7 @@ package com.mysite;
 /**
  * Created by LuMoR on 06.03.2017.
  */
-class Animals{
+class Animals<E>{
     String name;
     int age;
     void voice(){

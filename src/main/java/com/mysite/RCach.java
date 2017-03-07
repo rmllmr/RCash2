@@ -7,7 +7,7 @@ import java.util.Map;
 /**
  * Created by LuMoR on 06.03.2017.
  */
-class RCach<E> {
+class RCach<Animals> {
     private Map<String, Animals> cacheValue = new HashMap<String, Animals>();
     //private Map<String, T> cacheValue = new HashMap<String, T>();
     private Map<String, Long> cacheTimeLive = new HashMap<String, Long>();
